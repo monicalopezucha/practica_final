@@ -85,7 +85,7 @@ else:
         else:
             st.error(f"Error al enviar datos a FastAPI. Código de respuesta: {response.status_code}")
 db.close()
-git
+
 # Visualización 1: Gráfico de barras para contar la cantidad de autos por modelo
 fig_bar_by_model = px.bar(filtered_df['Model'].value_counts(), x=filtered_df['Model'].value_counts().index,
                           y=filtered_df['Model'].value_counts().values,
@@ -136,6 +136,6 @@ all_liked_brands = SessionLocal().query(LikedBrand).all()
 
 # Muestra las marcas en Streamlit
 if len(all_liked_brands) != 0:
-    st.write("Marcas que te gustan:")
+    st.write("Lista de favoritos:")
     for liked_brand in all_liked_brands:
         st.write(liked_brand.brand)
